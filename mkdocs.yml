@@ -1,7 +1,7 @@
 site_name: Gastro Kitabı
 site_description: Gastroenteroloji & hepatoloji hızlı başvuru
 # GitHub Pages'e koyunca doldur:
-# site_url: https://KULLANICI.github.io/gastro-kitabi/
+site_url: https://kocagerahmet.github.io/gastro-kitabi/
 theme:
   name: material
   language: tr
