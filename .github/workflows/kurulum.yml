@@ -1,0 +1,34 @@
+kurulum.ymlname: Kurulum
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  kurulum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dogru klasor yapisini kur
+        run: |
+          set -e
+          rm -rf /tmp/x && mkdir -p /tmp/x
+          unzip -o -q files.zip -d /tmp/x
+          unzip -o -q /tmp/x/gastro-kitabi.zip -d /tmp/x/inner
+          SRC=/tmp/x/inner/gastro-kitabi
+          for f in *.md; do [ -f "$f" ] && git rm -q --ignore-unmatch "$f" || true; done
+          git rm -q --ignore-unmatch extra.css || true
+          rm -rf docs
+          cp -r "$SRC/docs" docs
+          cp "$SRC/mkdocs.yml" mkdocs.yml
+          cp "$SRC/requirements.txt" requirements.txt
+          cp "$SRC/README.md" README.md
+          grep -q '^site_url:' mkdocs.yml || sed -i "s|^# site_url:.*|site_url: https://kocagerahmet.github.io/gastro-kitabi/|" mkdocs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Dogru MkDocs klasor yapisi kuruldu" || echo "degisiklik yok"
+          git push
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.x'}
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict
+      - run: mkdocs gh-deploy --force
