@@ -1,0 +1,6 @@
+.md-typeset { font-size: .72rem; line-height: 1.35; }
+.md-typeset table:not([class]) { font-size: .68rem; }
+.md-typeset table:not([class]) td, .md-typeset table:not([class]) th { padding: .35em .5em; }
+.md-typeset h1 { font-size: 1.3rem; margin-bottom: .3em; }
+.md-typeset h2 { margin: .9em 0 .3em; font-size: 1rem; }
+.md-typeset blockquote { font-size: .62rem; }
