@@ -1,0 +1,121 @@
+site_name: Gastro Kitabı
+site_description: Gastroenteroloji & hepatoloji hızlı başvuru
+# GitHub Pages'e koyunca doldur:
+# site_url: https://KULLANICI.github.io/gastro-kitabi/
+theme:
+  name: material
+  language: tr
+  palette:
+    - scheme: default
+      primary: teal
+      toggle: {icon: material/brightness-7, name: Koyu tema}
+    - scheme: slate
+      primary: teal
+      toggle: {icon: material/brightness-4, name: Açık tema}
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+plugins:
+  - search:
+      lang: [tr, en]
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
+nav:
+  - Ana sayfa: index.md
+  - Sözlük: kisaltmalar.md
+  - Luminal:
+      - Kanama:
+          - luminal/ugib.md
+          - luminal/lgib.md
+          - luminal/gizli-kanama.md
+          - luminal/nadir-kanama-nedenleri.md
+      - Özofagus:
+          - luminal/disfaji.md
+          - luminal/gerd.md
+          - luminal/eoe.md
+          - luminal/akalazya.md
+      - Mide:
+          - luminal/dispepsi-pud.md
+          - luminal/gastroparezi.md
+      - Bağırsak:
+          - luminal/karin-agrisi.md
+          - luminal/akut-ishal.md
+          - luminal/kronik-ishal.md
+          - luminal/colyak.md
+          - luminal/cdi.md
+          - luminal/ibs-kabizlik.md
+          - luminal/kolon-polip.md
+          - luminal/divertikul.md
+          - luminal/iskemik.md
+      - IBD:
+          - luminal/ibd-uc.md
+          - luminal/ibd-cd.md
+          - luminal/ibd-akut.md
+          - luminal/ibd-ilac.md
+      - Nütrisyon:
+          - luminal/beslenme.md
+  - Pankreatobiliyer:
+      - pankreatobiliyer/akut-pankreatit.md
+      - pankreatobiliyer/kronik-pankreatit.md
+      - pankreatobiliyer/pankreas-kist.md
+      - pankreatobiliyer/pankreas-ca.md
+      - pankreatobiliyer/safra-tasi.md
+      - pankreatobiliyer/kolanjit.md
+      - pankreatobiliyer/biliyer-striktur.md
+  - Hepatoloji:
+      - Genel & Akut:
+          - hepatoloji/kcft.md
+          - hepatoloji/alf.md
+          - hepatoloji/dili.md
+      - Viral:
+          - hepatoloji/hbv.md
+          - hepatoloji/hcv.md
+          - hepatoloji/hdv-hev.md
+      - Metabolik & Otoimmün:
+          - hepatoloji/masld.md
+          - hepatoloji/ald.md
+          - hepatoloji/aih.md
+          - hepatoloji/pbc-psc.md
+          - hepatoloji/wilson-hemokromatoz.md
+      - Siroz:
+          - hepatoloji/siroz.md
+          - hepatoloji/varis.md
+          - hepatoloji/asit-sbp.md
+          - hepatoloji/hrs.md
+          - hepatoloji/he.md
+          - hepatoloji/aclf.md
+      - Tümör & Vasküler:
+          - hepatoloji/hcc.md
+          - hepatoloji/kc-kitle.md
+          - hepatoloji/vaskuler.md
+      - Özel:
+          - hepatoloji/gebelik.md
+          - hepatoloji/transplant.md
+  - Endoskopi:
+      - endoskopi/hazirlik.md
+      - endoskopi/antitrombotik.md
+      - endoskopi/komplikasyon.md
+      - endoskopi/ercp-eus.md
+      - endoskopi/kapsul-enteroskopi.md
+  - Skorlar:
+      - skorlar/kanama.md
+      - skorlar/hepatoloji.md
+      - skorlar/pankreatit.md
+  - Arka plan:
+      - arka-plan/kanama.md
+  - Türkiye:
+      - turkiye/sut.md
+      - turkiye/kilavuzlar.md
