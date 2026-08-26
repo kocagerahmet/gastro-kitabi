@@ -1,4 +1,4 @@
-kurulum.ymlname: Kurulum
+# kurulum.ymlname: Kurulum
 on: workflow_dispatch
 permissions:
   contents: write
